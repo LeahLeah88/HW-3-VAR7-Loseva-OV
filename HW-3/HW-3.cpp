@@ -46,9 +46,54 @@ void task2()
     else
         std::cout << "Некорректный день недели";
 }
+void task3()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int x;
+    std::cout << "Цена за 1 шт. товара: ";
+    std::cin >> x;
+    int y;
+    y = 10;
+
+    std::cout << "\nРешение задачи методом while" << "\n";
+
+    while (y <= 100)
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        y = y + 10;
+        std::cout << "\n";
+    }
+
+    y = 10;
+
+    std::cout << "\nРешение задачи методом do while" << "\n";
+
+    do
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        y = y + 10;
+        std::cout << "\n";
+    }
+
+    while (y <= 100);
+
+    std::cout << "\nРешение задачи методом for" << "\n";
+
+    for (int y = 10; y <= 100; y = y + 10)
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        std::cout << "\n";
+    }
+
+}
 
 int main()
 {
     task1();
     task2();
+    task3();
 }
