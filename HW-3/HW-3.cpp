@@ -103,10 +103,38 @@ void task4()
 
     }
 }
+void calculate_y(double x)
+{
+    if ((2 * x - 1) > 0)
+        std::cout << "y ( " << x << " ) \t" << x / sqrt(x * 2 - 1) << "\n";
+    else
+        std::cout << "В некоторой точке Х функция не определена" << "\n";
+}
+void task5()
+
+{
+    setlocale(LC_ALL, "Russian");
+
+    double a;
+    std::cout << "a = ";
+    std::cin >> a;
+    double b;
+    std::cout << "b = ";
+    std::cin >> b;
+    double h;
+    std::cout << "h = ";
+    std::cin >> h;
+
+    for (double x = a; x <= b; x = x + h)
+    {
+        calculate_y(x);
+    }
+}
 int main()
 {
     task1();
     task2();
     task3();
     task4();
+    task5();
 }
