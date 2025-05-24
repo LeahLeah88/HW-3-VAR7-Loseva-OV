@@ -130,6 +130,33 @@ void task5()
         calculate_y(x);
     }
 }
+void buildTableForY(double x)
+{
+    if (x < 0)
+        std::cout << "y ( " << x << " ) \t" << -4 << "\n";
+    else if (x >= 1)
+        std::cout << "y ( " << x << " ) \t" << 2 << "\n";
+    else
+        std::cout << "y ( " << x << " ) \t" << pow(x, 2) + x * 3 + 4 << "\n";
+}
+
+void task6()
+{
+    double a;
+    std::cout << "a = ";
+    std::cin >> a;
+    double b;
+    std::cout << "b = ";
+    std::cin >> b;
+    double h;
+    std::cout << "h = ";
+    std::cin >> h;
+
+    for (double x = a; x <= b; x = x + h)
+    {
+        buildTableForY(x);
+    }
+}
 int main()
 {
     task1();
@@ -137,4 +164,5 @@ int main()
     task3();
     task4();
     task5();
+    task6();
 }
