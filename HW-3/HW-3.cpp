@@ -90,10 +90,23 @@ void task3()
     }
 
 }
+void task4()
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            std::cout << i << " ";
 
+        }
+        std::cout << "\n";
+
+    }
+}
 int main()
 {
     task1();
     task2();
     task3();
+    task4();
 }
