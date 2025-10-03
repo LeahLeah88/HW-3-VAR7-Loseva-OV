@@ -26,25 +26,28 @@ void task2()
 {
     system("chcp 1251>nul");
 
-    std::string a;
-    std::cin >> a;
-
-    if (a == "понедельник")
-        std::cout << "09:00 - 14:00";
-    else if (a == "вторник")
-        std::cout << "14:00 - 19:00";
-    else if (a == "среда")
-        std::cout << "09:00 - 14:00";
-    else if (a == "четверг")
-        std::cout << "14:00 - 19:00";
-    else if (a == "пятница")
-        std::cout << "09:00 - 14:00";
-    else if (a == "суббота")
-        std::cout << "Выходной";
-    else if (a == "воскресенье")
-        std::cout << "Выходной";
-    else
-        std::cout << "Некорректный день недели";
+    int dayNumber;
+    std::cin >> dayNumber;
+    
+    switch (dayNumber)
+    {
+        case 1: // понедельник
+        case 3: // среда
+        case 5: // пятница
+            std::cout << "09:00 - 14:00";
+            break;
+        case 2: // вторник
+        case 4: // четверг
+            std::cout << "14:00 - 19:00";
+            break;
+        case 6: // суббота
+        case 7: // воскресенье
+            std::cout << "Выходной";
+            break;
+        default:
+            std::cout << "Некорректный номер дня недели";
+            break;
+    }
 }
 void task3()
 {
@@ -166,3 +169,4 @@ int main()
     task5();
     task6();
 }
+
