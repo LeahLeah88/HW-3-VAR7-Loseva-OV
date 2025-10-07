@@ -1,0 +1,172 @@
+﻿#include <iostream>
+#include <cmath>
+
+void calculate_point(int x, int y)
+{
+    if (y > abs(x) && sqrt(pow(x, 2) + pow(y, 2)) < 15)
+        std::cout << "Да";
+    else if (y == abs(x) && sqrt(pow(x, 2) + pow(y, 2)) == 15)
+        std::cout << "На границе";
+    else
+        std::cout << "Нет";
+}
+void task1()
+{
+    setlocale(LC_ALL, "Russian");
+    int x;
+    int y;
+    std::cout << "x = ";
+    std::cin >> x;
+    std::cout << "y = ";
+    std::cin >> y;
+
+    calculate_point(x, y);
+}
+void task2()
+{
+    system("chcp 1251>nul");
+
+    int dayNumber;
+    std::cin >> dayNumber;
+    
+    switch (dayNumber)
+    {
+        case 1: // понедельник
+        case 3: // среда
+        case 5: // пятница
+            std::cout << "09:00 - 14:00";
+            break;
+        case 2: // вторник
+        case 4: // четверг
+            std::cout << "14:00 - 19:00";
+            break;
+        case 6: // суббота
+        case 7: // воскресенье
+            std::cout << "Выходной";
+            break;
+        default:
+            std::cout << "Некорректный номер дня недели";
+            break;
+    }
+}
+void task3()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int x;
+    std::cout << "Цена за 1 шт. товара: ";
+    std::cin >> x;
+    int y;
+    y = 10;
+
+    std::cout << "\nРешение задачи методом while" << "\n";
+
+    while (y <= 100)
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        y = y + 10;
+        std::cout << "\n";
+    }
+
+    y = 10;
+
+    std::cout << "\nРешение задачи методом do while" << "\n";
+
+    do
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        y = y + 10;
+        std::cout << "\n";
+    }
+
+    while (y <= 100);
+
+    std::cout << "\nРешение задачи методом for" << "\n";
+
+    for (int y = 10; y <= 100; y = y + 10)
+    {
+        std::cout << y << " товаров -\t";
+        std::cout << x * y << " рублей";
+        std::cout << "\n";
+    }
+
+}
+void task4()
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            std::cout << i << " ";
+
+        }
+        std::cout << "\n";
+
+    }
+}
+void calculate_y(double x)
+{
+    if ((2 * x - 1) > 0)
+        std::cout << "y ( " << x << " ) \t" << x / sqrt(x * 2 - 1) << "\n";
+    else
+        std::cout << "В некоторой точке Х функция не определена" << "\n";
+}
+void task5()
+
+{
+    setlocale(LC_ALL, "Russian");
+
+    double a;
+    std::cout << "a = ";
+    std::cin >> a;
+    double b;
+    std::cout << "b = ";
+    std::cin >> b;
+    double h;
+    std::cout << "h = ";
+    std::cin >> h;
+
+    for (double x = a; x <= b; x = x + h)
+    {
+        calculate_y(x);
+    }
+}
+void buildTableForY(double x)
+{
+    if (x < 0)
+        std::cout << "y ( " << x << " ) \t" << -4 << "\n";
+    else if (x >= 1)
+        std::cout << "y ( " << x << " ) \t" << 2 << "\n";
+    else
+        std::cout << "y ( " << x << " ) \t" << pow(x, 2) + x * 3 + 4 << "\n";
+}
+
+void task6()
+{
+    double a;
+    std::cout << "a = ";
+    std::cin >> a;
+    double b;
+    std::cout << "b = ";
+    std::cin >> b;
+    double h;
+    std::cout << "h = ";
+    std::cin >> h;
+
+    for (double x = a; x <= b; x = x + h)
+    {
+        buildTableForY(x);
+    }
+}
+int main()
+{
+    task1();
+    task2();
+    task3();
+    task4();
+    task5();
+    task6();
+}
+
